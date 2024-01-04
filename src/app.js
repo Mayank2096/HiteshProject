@@ -19,4 +19,12 @@ app.use(cors({
 }));
 
 
-export  { app };
+//////////////////// Router ///////////////////////////////////
+
+import userRouter from "./routes/user.router.js";
+
+// passing to router THROUGH MIDDLEWARE
+app.use("/api/v1/users",userRouter);
+
+// http://localhost:8000/api/v1/users/<in_router_file>
+export default app ;
