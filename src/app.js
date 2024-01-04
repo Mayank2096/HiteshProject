@@ -5,7 +5,7 @@ import cors from "cors";
 
 const app= express();
 
-// MIDDLEWARES
+////////////////////// MIDDLEWARES //////////////////////////
 app.use(express.json({limit: "16kb"}));
 app.use(express.urlencoded({ // for parsing of nested objects
     extended: true,
