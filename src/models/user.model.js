@@ -53,7 +53,7 @@ const userSchema = new mongoose.Schema({
 userSchema.pre("save", async function(next){
     if(!this.isModified("password")) return next();
     // hashing password using hash method of bcrypt
-    this.password=bcrypt.hash(this.password,10) // 10 -> means 10 rounds of hash . It is not fixed
+    this.password=await bcrypt.hash(this.password,10) // 10 -> means 10 rounds of hash . It is not fixed
     next();
 })
 
